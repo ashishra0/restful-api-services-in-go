@@ -3,7 +3,7 @@
 ![go server](servergo.png)
 ---
 
-Part - I
+Part - I Getting Started
 
 * Create and start a web server
 * Create a default route
@@ -12,4 +12,4 @@ Part - I
 
 ---
 
-Part - II
+Part - II Making API RESTful
