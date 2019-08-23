@@ -28,6 +28,7 @@ func bodyToUser(r *http.Request, u *user.User) error {
 	return json.Unmarshal(bd, u)
 }
 
+// getUsers retrieves the list of users
 func getUsers(w http.ResponseWriter, r *http.Request) {
 	users, err := user.All()
 	if err != nil {
@@ -37,6 +38,7 @@ func getUsers(w http.ResponseWriter, r *http.Request) {
 	postBodyResponse(w, http.StatusOK, jsonResponse{"users": users})
 }
 
+// createUser creates a single user
 func createUser(w http.ResponseWriter, r *http.Request) {
 	u := new(user.User)
 	err := bodyToUser(r, u)
@@ -58,6 +60,7 @@ func createUser(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusCreated)
 }
 
+// getSingleUser retrieves a single user
 func getSingleUser(w http.ResponseWriter, _ *http.Request, id bson.ObjectId) {
 	u, err := user.One(id)
 	if err != nil {
