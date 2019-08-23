@@ -36,6 +36,7 @@ func UsersRouter(w http.ResponseWriter, r *http.Request) {
 		getSingleUser(w, r, id)
 		return
 	case http.MethodPut:
+		putUser(w, r, id)
 		return
 	case http.MethodPatch:
 		return
