@@ -42,6 +42,7 @@ func UsersRouter(w http.ResponseWriter, r *http.Request) {
 		patchUser(w, r, id)
 		return
 	case http.MethodDelete:
+		deleteUser(w, r, id)
 		return
 	default:
 		postError(w, http.StatusMethodNotAllowed)
