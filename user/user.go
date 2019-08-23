@@ -51,7 +51,7 @@ func One(id bson.ObjectId) (*User, error) {
 	if err != nil {
 		return nil, err
 	}
-	return nil, err
+	return u, err
 }
 
 // Delete removes a given record from the database
