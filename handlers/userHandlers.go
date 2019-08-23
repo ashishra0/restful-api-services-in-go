@@ -3,14 +3,13 @@ package handlers
 import (
 	"encoding/json"
 	"errors"
+	"go-rest-api-services/user"
 	"io/ioutil"
 	"net/http"
 
 	"github.com/asdine/storm"
 
 	"gopkg.in/mgo.v2/bson"
-
-	"../../go-rest-api-services/user"
 )
 
 // bodyToUser reads the body contents
