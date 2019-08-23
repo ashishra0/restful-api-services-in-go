@@ -6,6 +6,8 @@ import (
 	"io/ioutil"
 	"net/http"
 
+	"github.com/asdine/storm"
+
 	"gopkg.in/mgo.v2/bson"
 
 	"../../go-rest-api-services/user"
@@ -54,4 +56,17 @@ func createUser(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Set("Location", "/users/"+u.ID.Hex())
 	w.WriteHeader(http.StatusCreated)
+}
+
+func getSingleUser(w http.ResponseWriter, _ *http.Request, id bson.ObjectId) {
+	u, err := user.One(id)
+	if err != nil {
+		if err == storm.ErrNotFound {
+			postError(w, http.StatusNotFound)
+			return
+		}
+		postError(w, http.StatusInternalServerError)
+		return
+	}
+	postBodyResponse(w, http.StatusOK, jsonResponse{"user": u})
 }
