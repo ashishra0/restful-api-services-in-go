@@ -2,10 +2,9 @@ package main
 
 import (
 	"fmt"
+	"go-rest-api-services/handlers"
 	"net/http"
 	"os"
-
-	"../go-rest-api-services/handlers"
 )
 
 func main() {
