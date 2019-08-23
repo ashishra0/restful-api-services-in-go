@@ -3,6 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"errors"
+	"go-rest-api-services/user"
 	"io/ioutil"
 	"net/http"
 	"restful-api-services-in-go/user"

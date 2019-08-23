@@ -2,9 +2,13 @@ package main
 
 import (
 	"fmt"
+	"go-rest-api-services/handlers"
 	"net/http"
 	"os"
+<<<<<<< HEAD
 	"restful-api-services-in-go/handlers"
+=======
+>>>>>>> d1b0bf892e8c11042df951a924e39f304d2ff660
 )
 
 func main() {
