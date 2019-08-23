@@ -4,8 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-
-	"../go-rest-api-services/handlers"
+	"restful-api-services-in-go/handlers"
 )
 
 func main() {
