@@ -5,12 +5,11 @@ import (
 	"errors"
 	"io/ioutil"
 	"net/http"
+	"restful-api-services-in-go/user"
 
 	"github.com/asdine/storm"
 
 	"gopkg.in/mgo.v2/bson"
-
-	"../../go-rest-api-services/user"
 )
 
 // bodyToUser reads the body contents
