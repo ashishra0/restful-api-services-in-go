@@ -121,3 +121,16 @@ func patchUser(w http.ResponseWriter, r *http.Request, id bson.ObjectId) {
 	}
 	postBodyResponse(w, http.StatusOK, jsonResponse{"user": u})
 }
+
+func deleteUser(w http.ResponseWriter, _ *http.Request, id bson.ObjectId) {
+	err := user.Delete(id)
+	if err != nil {
+		if err == storm.ErrNotFound {
+			postError(w, http.StatusNotFound)
+			return
+		}
+		postError(w, http.StatusInternalServerError)
+		return
+	}
+	w.WriteHeader(http.StatusOK)
+}
