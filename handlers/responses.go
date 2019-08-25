@@ -11,6 +11,7 @@ func postError(w http.ResponseWriter, code int) {
 	http.Error(w, http.StatusText(code), code)
 }
 
+// postBodyResponse retrieves the response generated from the request
 func postBodyResponse(w http.ResponseWriter, code int, content jsonResponse) {
 	if content != nil {
 		js, err := json.Marshal(content)
